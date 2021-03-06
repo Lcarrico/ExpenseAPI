@@ -16,3 +16,17 @@
  
  Finally, run the generated snapshot using the command `java -jar ExpenseAPI-all-1.0-SNAPSHOT.jar`.
  
+ ### Commands
+ 
+ `POST /expenses` -> Creates a new expense request.
+ 
+ `GET /expenses` -> Gets all expense requests.
+ 
+ `GET /expenses/:id` -> Gets expense with id of ":id".
+ 
+ `PUT /expenses/:id` -> Updates expense with id of ":id".
+ 
+ `DEL /expenses/:id` -> Deletes expense with id of ":id".
+ 
+ `
+ 
