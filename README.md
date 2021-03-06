@@ -16,7 +16,7 @@
  
  Finally, run the generated snapshot using the command `java -jar ExpenseAPI-all-1.0-SNAPSHOT.jar`.
  
- ### Commands
+ ## Commands
  
  `POST /expenses` -> Creates a new expense request.
  
