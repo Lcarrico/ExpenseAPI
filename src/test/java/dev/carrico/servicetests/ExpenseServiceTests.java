@@ -30,6 +30,7 @@ public class ExpenseServiceTests {
     @BeforeEach
     void setup(){
 
+        // create expense
         Mockito.when(this.expenseDAO.createExpense(Mockito.any(Expense.class))).thenAnswer(
                 (Answer<Expense>) invocation -> {
                     Expense e = invocation.getArgument(0);
@@ -37,7 +38,7 @@ public class ExpenseServiceTests {
                     return e;
                 }
         );
-
+        //create expense ends
 
         Mockito.when(this.expenseDAO.getExpenseById(1)).thenReturn(
                 testExpense
@@ -54,10 +55,7 @@ public class ExpenseServiceTests {
                 }
         );
 
-
         Mockito.when(this.expenseDAO.deleteExpenseById(1)).thenReturn(true);
-
-
 
         expenseService = new ExpenseServiceImpl(expenseDAO);
 

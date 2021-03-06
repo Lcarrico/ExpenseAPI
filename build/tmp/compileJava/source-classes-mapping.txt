@@ -22,14 +22,14 @@ carrico/dev/daos/EmployeeDaoPostgres.java
  carrico.dev.daos.EmployeeDaoPostgres
 carrico/dev/daos/ManagerDaoPostgres.java
  carrico.dev.daos.ManagerDaoPostgres
-carrico/dev/services/EmployeeServiceImpl.java
- carrico.dev.services.EmployeeServiceImpl
+carrico/dev/services/ManagerServiceImpl.java
+ carrico.dev.services.ManagerServiceImpl
 carrico/dev/services/ExpenseService.java
  carrico.dev.services.ExpenseService
 carrico/dev/services/ExpenseServiceImpl.java
  carrico.dev.services.ExpenseServiceImpl
-carrico/dev/services/ManagerServiceImpl.java
- carrico.dev.services.ManagerServiceImpl
+carrico/dev/services/EmployeeServiceImpl.java
+ carrico.dev.services.EmployeeServiceImpl
 carrico/dev/controllers/ExpenseController.java
  carrico.dev.controllers.ExpenseController
 carrico/dev/app/App.java

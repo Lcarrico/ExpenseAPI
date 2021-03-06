@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.carrico.servicetests.ExpenseServiceTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-04T22:14:35" hostname="LAPTOP-BCCHPN74" time="0.657">
+  <properties/>
+  <testcase name="create_expense()" classname="dev.carrico.servicetests.ExpenseServiceTests" time="0.657"/>
+  <system-out><![CDATA[Expense{expenseId=1, amount=100, employeeReason='refund', status='pending', dateSubmitted=1614896075924, dateReviewed=0, managerReason='null', employeeId=1, managerId=0}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
