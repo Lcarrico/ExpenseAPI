@@ -1,6 +1,6 @@
 package dev.carrico.utiltests;
 
-import carrico.dev.utils.ConnectionUtil;
+import dev.carrico.utils.ConnectionUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

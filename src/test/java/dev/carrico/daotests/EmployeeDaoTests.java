@@ -1,17 +1,10 @@
 package dev.carrico.daotests;
 
-import carrico.dev.daos.EmployeeDAO;
-import carrico.dev.daos.EmployeeDaoPostgres;
-import carrico.dev.entities.Employee;
+import dev.carrico.daos.EmployeeDAO;
+import dev.carrico.daos.EmployeeDaoPostgres;
+import dev.carrico.entities.Employee;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.junit.jupiter.MockitoSettings;
-import org.mockito.quality.Strictness;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

@@ -1,17 +1,14 @@
 package dev.carrico.daotests;
 
-import carrico.dev.daos.ExpenseDAO;
-import carrico.dev.daos.ExpenseDaoPostgres;
-import carrico.dev.entities.Expense;
+import dev.carrico.daos.ExpenseDAO;
+import dev.carrico.daos.ExpenseDaoPostgres;
+import dev.carrico.entities.Expense;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @MockitoSettings(strictness = Strictness.LENIENT)

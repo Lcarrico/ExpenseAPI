@@ -1,9 +1,9 @@
 package dev.carrico.servicetests;
 
-import carrico.dev.daos.ExpenseDAO;
-import carrico.dev.entities.Expense;
-import carrico.dev.services.ExpenseService;
-import carrico.dev.services.ExpenseServiceImpl;
+import dev.carrico.daos.ExpenseDAO;
+import dev.carrico.entities.Expense;
+import dev.carrico.services.ExpenseService;
+import dev.carrico.services.ExpenseServiceImpl;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;

@@ -1,11 +1,9 @@
 package dev.carrico.servicetests;
 
-import carrico.dev.daos.ManagerDAO;
-import carrico.dev.entities.Employee;
-import carrico.dev.entities.Manager;
-import carrico.dev.services.ManagerService;
-import carrico.dev.services.ManagerServiceImpl;
-import carrico.dev.services.ManagerService;
+import dev.carrico.daos.ManagerDAO;
+import dev.carrico.entities.Manager;
+import dev.carrico.services.ManagerService;
+import dev.carrico.services.ManagerServiceImpl;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
