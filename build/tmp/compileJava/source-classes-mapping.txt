@@ -1,9 +1,9 @@
 carrico/dev/entities/Expense.java
  carrico.dev.entities.Expense
-carrico/dev/daos/ExpenseDaoPostgres.java
- carrico.dev.daos.ExpenseDaoPostgres
-carrico/dev/daos/ExpenseDAO.java
- carrico.dev.daos.ExpenseDAO
+carrico/dev/exceptions/ManagerNotFoundException.java
+ carrico.dev.exceptions.ManagerNotFoundException
+carrico/dev/exceptions/EmployeeNotFoundException.java
+ carrico.dev.exceptions.EmployeeNotFoundException
 carrico/dev/utils/ConnectionUtil.java
  carrico.dev.utils.ConnectionUtil
 carrico/dev/entities/Manager.java
@@ -24,15 +24,23 @@ carrico/dev/daos/ManagerDaoPostgres.java
  carrico.dev.daos.ManagerDaoPostgres
 carrico/dev/services/ManagerServiceImpl.java
  carrico.dev.services.ManagerServiceImpl
-carrico/dev/services/ExpenseService.java
- carrico.dev.services.ExpenseService
-carrico/dev/services/ExpenseServiceImpl.java
- carrico.dev.services.ExpenseServiceImpl
+carrico/dev/exceptions/BadFormatException.java
+ carrico.dev.exceptions.BadFormatException
+carrico/dev/controllers/LoginController.java
+ carrico.dev.controllers.LoginController
 carrico/dev/services/EmployeeServiceImpl.java
  carrico.dev.services.EmployeeServiceImpl
+carrico/dev/exceptions/ExpenseNotFoundException.java
+ carrico.dev.exceptions.ExpenseNotFoundException
+carrico/dev/daos/ExpenseDAO.java
+ carrico.dev.daos.ExpenseDAO
+carrico/dev/services/ExpenseService.java
+ carrico.dev.services.ExpenseService
+carrico/dev/daos/ExpenseDaoPostgres.java
+ carrico.dev.daos.ExpenseDaoPostgres
 carrico/dev/controllers/ExpenseController.java
  carrico.dev.controllers.ExpenseController
 carrico/dev/app/App.java
  carrico.dev.app.App
-carrico/dev/controllers/LoginController.java
- carrico.dev.controllers.LoginController
+carrico/dev/services/ExpenseServiceImpl.java
+ carrico.dev.services.ExpenseServiceImpl

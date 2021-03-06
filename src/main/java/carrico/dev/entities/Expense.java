@@ -6,7 +6,7 @@ public class Expense {
     private int expenseId = 0;
     private int amount = 0;
     private String employeeReason = null;
-    private String status = null;
+    private String status = "pending";
     private long dateSubmitted = 0;
     private long dateReviewed = 0;
     private String managerReason = null;

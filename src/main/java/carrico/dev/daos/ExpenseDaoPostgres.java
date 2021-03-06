@@ -33,7 +33,6 @@ public class ExpenseDaoPostgres implements ExpenseDAO{
             return expense;
 
         } catch (SQLException sqlException){
-            sqlException.printStackTrace();
             return null;
         }
     }
@@ -58,7 +57,6 @@ public class ExpenseDaoPostgres implements ExpenseDAO{
             expense.setManagerId(rs.getInt("manager_id"));
             return expense;
         } catch (SQLException e){
-            e.printStackTrace();
             return null;
         }
     }
@@ -108,11 +106,9 @@ public class ExpenseDaoPostgres implements ExpenseDAO{
             ps.setInt(8, expense.getManagerId());
             ps.setInt(9, expense.getExpenseId());
             ps.execute();
-
             return expense;
 
         } catch (SQLException e){
-            e.printStackTrace();
             return null;
         }
     }
