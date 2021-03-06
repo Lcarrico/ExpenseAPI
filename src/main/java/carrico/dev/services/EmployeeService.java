@@ -10,4 +10,6 @@ public interface EmployeeService {
 
     public Employee getEmployeeById(int employeeId);
 
+    public Employee getEmployeeByUsernameAndPswrd(String username, String pswrd);
+
 }

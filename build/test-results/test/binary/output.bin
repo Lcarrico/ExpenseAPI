@@ -1,1 +1,3 @@
-«Expense{expenseId=1, amount=100, employeeReason='refund', status='pending', dateSubmitted=1614896075924, dateReviewed=0, managerReason='null', employeeId=1, managerId=0}
+_Manager{managerId=1, firstName='', lastName='', username='giovannirocks', pswrd='ashismyson'}
+¿[Manager{managerId=2, firstName='', lastName='', username='ltsurge', pswrd='ligthningiscool'}, Manager{managerId=1, firstName='', lastName='', username='giovannirocks', pswrd='ashismyson'}]
+_Manager{managerId=1, firstName='', lastName='', username='giovannirocks', pswrd='ashismyson'}

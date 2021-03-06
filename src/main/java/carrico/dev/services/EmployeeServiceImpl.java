@@ -23,4 +23,17 @@ public class EmployeeServiceImpl implements EmployeeService{
         return edao.getEmployeeById(employeeId);
     }
 
+    @Override
+    public Employee getEmployeeByUsernameAndPswrd(String username, String pswrd) {
+        Employee e = null;
+        Set<Employee> employees = this.getAllEmployees();
+        for (Employee temp : employees){
+            if (temp.getUsername().equals(username) && temp.getPswrd().equals(pswrd)){
+                e = temp;
+            }
+        }
+        return e;
+    }
+
+
 }

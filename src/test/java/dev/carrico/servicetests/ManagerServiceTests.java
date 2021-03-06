@@ -1,6 +1,7 @@
 package dev.carrico.servicetests;
 
 import carrico.dev.daos.ManagerDAO;
+import carrico.dev.entities.Employee;
 import carrico.dev.entities.Manager;
 import carrico.dev.services.ManagerService;
 import carrico.dev.services.ManagerServiceImpl;
@@ -65,5 +66,17 @@ public class ManagerServiceTests {
         Assertions.assertNotNull(managers);
         Assertions.assertTrue(managers.size() > 0);
         System.out.println(managers);
+    }
+
+    @Order(3)
+    @Test
+    void get_manager_by_username_and_pswrd(){
+        String username = "giovannirocks";
+        String pswrd = "ashismyson";
+
+        Manager m = this.managerService.getManagerByUsernameAndPswrd(username, pswrd);
+        Assertions.assertNotNull(m);
+        Assertions.assertEquals("giovannirocks", m.getUsername());
+        System.out.println(m);
     }
 }

@@ -1,6 +1,7 @@
 package carrico.dev.services;
 
 import carrico.dev.daos.ManagerDAO;
+import carrico.dev.entities.Employee;
 import carrico.dev.entities.Manager;
 
 import java.util.Set;
@@ -22,5 +23,17 @@ public class ManagerServiceImpl implements ManagerService{
     @Override
     public Manager getManagerById(int managerId) {
         return mdao.getManagerById(managerId);
+    }
+
+    @Override
+    public Manager getManagerByUsernameAndPswrd(String username, String pswrd) {
+        Manager m = null;
+        Set<Manager> managers = this.getAllManagers();
+        for (Manager temp : managers){
+            if (temp.getUsername().equals(username) && temp.getPswrd().equals(pswrd)){
+                m = temp;
+            }
+        }
+        return m;
     }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.carrico.servicetests.ManagerServiceTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-03-06T19:31:12" hostname="LAPTOP-BCCHPN74" time="0.424">
+  <properties/>
+  <testcase name="get_manager_by_id()" classname="dev.carrico.servicetests.ManagerServiceTests" time="0.416"/>
+  <testcase name="get_all_managers()" classname="dev.carrico.servicetests.ManagerServiceTests" time="0.003"/>
+  <testcase name="get_manager_by_username_and_pswrd()" classname="dev.carrico.servicetests.ManagerServiceTests" time="0.003"/>
+  <system-out><![CDATA[Manager{managerId=1, firstName='', lastName='', username='giovannirocks', pswrd='ashismyson'}
+[Manager{managerId=2, firstName='', lastName='', username='ltsurge', pswrd='ligthningiscool'}, Manager{managerId=1, firstName='', lastName='', username='giovannirocks', pswrd='ashismyson'}]
+Manager{managerId=1, firstName='', lastName='', username='giovannirocks', pswrd='ashismyson'}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

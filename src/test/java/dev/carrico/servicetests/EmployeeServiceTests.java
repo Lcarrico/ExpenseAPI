@@ -69,4 +69,16 @@ public class EmployeeServiceTests {
         System.out.println(employees);
     }
 
+    @Order(3)
+    @Test
+    void get_employee_by_username_and_pswrd(){
+        String username = "jessie1";
+        String pswrd = "iwantpikachu";
+
+        Employee e = this.employeeService.getEmployeeByUsernameAndPswrd(username, pswrd);
+        Assertions.assertNotNull(e);
+        Assertions.assertEquals("jessie1", e.getUsername());
+        System.out.println(e);
+    }
+
 }
