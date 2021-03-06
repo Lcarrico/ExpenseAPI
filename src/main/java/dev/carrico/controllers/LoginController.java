@@ -9,10 +9,13 @@ import dev.carrico.services.EmployeeServiceImpl;
 import dev.carrico.services.ManagerService;
 import dev.carrico.services.ManagerServiceImpl;
 import com.google.gson.Gson;
+import dev.carrico.utils.JwtUtil;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 
 public class LoginController {
+
+    // TODO add logger
 
     private EmployeeService employeeService = new EmployeeServiceImpl(new EmployeeDaoPostgres());
     private ManagerService managerService = new ManagerServiceImpl(new ManagerDaoPostgres());
@@ -27,11 +30,13 @@ public class LoginController {
         employee = employeeService.getEmployeeByUsernameAndPswrd(employee.getUsername(), employee.getPswrd());
 
         if (manager != null){
-            System.out.println(manager);
+            String token = JwtUtil.generate("manager", manager.getUsername());
+            ctx.cookie("Authorization", token, 86400);
             ctx.status(200);
         }
         else if (employee != null){
-            System.out.println(employee);
+            String token = JwtUtil.generate("employee", employee.getUsername());
+            ctx.cookie("Authorization", token, 86400);
             ctx.status(200);
         }
         else {

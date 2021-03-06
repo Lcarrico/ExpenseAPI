@@ -1,12 +1,16 @@
 package dev.carrico.controllers;
 
+import com.auth0.jwt.interfaces.DecodedJWT;
 import dev.carrico.daos.ExpenseDaoPostgres;
 import dev.carrico.entities.Expense;
+import dev.carrico.entities.Manager;
 import dev.carrico.exceptions.BadFormatException;
 import dev.carrico.exceptions.ExpenseNotFoundException;
 import com.google.gson.Gson;
+import dev.carrico.exceptions.InsufficientPrivilegesException;
 import dev.carrico.services.ExpenseService;
 import dev.carrico.services.ExpenseServiceImpl;
+import dev.carrico.utils.JwtUtil;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 
@@ -20,6 +24,16 @@ public class ExpenseController {
 
     public Handler createExpenseHandler = (Context ctx) -> {
         try {
+            String token = ctx.header("Authorization");
+            if (token == null){
+                throw new InsufficientPrivilegesException();
+            }
+            DecodedJWT jwt = JwtUtil.isValidJWT(token);
+            String role = jwt.getClaim("role").asString();
+            if (!role.equals("employee")){
+                throw new InsufficientPrivilegesException();
+            }
+
             String body = ctx.body();
             Gson gson = new Gson();
             Expense expense = gson.fromJson(body, Expense.class);
@@ -29,6 +43,8 @@ public class ExpenseController {
             ctx.status(201);
         } catch (BadFormatException e){
             ctx.status(400);
+        } catch (InsufficientPrivilegesException e){
+            ctx.status(403);
         }
     };
 
@@ -57,6 +73,16 @@ public class ExpenseController {
 
     public Handler updateExpenseHandler = (Context ctx) -> {
         try {
+            String token = ctx.header("Authorization");
+            if (token == null){
+                throw new InsufficientPrivilegesException();
+            }
+            DecodedJWT jwt = JwtUtil.isValidJWT(token);
+            String role = jwt.getClaim("role").asString();
+            if (!role.equals("manager")){
+                throw new InsufficientPrivilegesException();
+            }
+
             int expenseId = Integer.parseInt(ctx.pathParam("expenseId"));
             String body = ctx.body();
             Gson gson = new Gson();
@@ -84,12 +110,23 @@ public class ExpenseController {
             ctx.status(400);
         } catch (BadFormatException e){
             ctx.status(400);
+        } catch (InsufficientPrivilegesException e){
+            ctx.status(403);
         }
-
     };
     
     public Handler deleteExpenseHandler = (Context ctx) -> {
         try {
+            String token = ctx.header("Authorization");
+            if (token == null){
+                throw new InsufficientPrivilegesException();
+            }
+            DecodedJWT jwt = JwtUtil.isValidJWT(token);
+            String role = jwt.getClaim("role").asString();
+            if (!role.equals("manager")){
+                throw new InsufficientPrivilegesException();
+            }
+
             int expenseId = Integer.parseInt(ctx.pathParam("expenseId"));
             if (expenseService.deleteExpense(expenseId))
                 ctx.status(204);
@@ -97,6 +134,8 @@ public class ExpenseController {
                 ctx.status(400);
         } catch (ExpenseNotFoundException e){
             ctx.status(404);
+        } catch (InsufficientPrivilegesException e){
+            ctx.status(403);
         }
 
     };
