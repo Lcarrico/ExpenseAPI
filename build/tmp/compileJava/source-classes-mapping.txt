@@ -16,12 +16,12 @@ dev/carrico/services/ManagerServiceImpl.java
  dev.carrico.services.ManagerServiceImpl
 dev/carrico/exceptions/ManagerNotFoundException.java
  dev.carrico.exceptions.ManagerNotFoundException
-dev/carrico/daos/ExpenseDaoPostgres.java
- dev.carrico.daos.ExpenseDaoPostgres
+dev/carrico/app/App.java
+ dev.carrico.app.App
 dev/carrico/exceptions/EmployeeNotFoundException.java
  dev.carrico.exceptions.EmployeeNotFoundException
-dev/carrico/controllers/LoginController.java
- dev.carrico.controllers.LoginController
+dev/carrico/exceptions/InsufficientPrivilegesException.java
+ dev.carrico.exceptions.InsufficientPrivilegesException
 dev/carrico/services/ExpenseService.java
  dev.carrico.services.ExpenseService
 dev/carrico/services/EmployeeService.java
@@ -42,9 +42,9 @@ dev/carrico/daos/EmployeeDAO.java
  dev.carrico.daos.EmployeeDAO
 dev/carrico/services/ExpenseServiceImpl.java
  dev.carrico.services.ExpenseServiceImpl
-dev/carrico/exceptions/InsufficientPrivilegesException.java
- dev.carrico.exceptions.InsufficientPrivilegesException
-dev/carrico/app/App.java
- dev.carrico.app.App
+dev/carrico/controllers/LoginController.java
+ dev.carrico.controllers.LoginController
+dev/carrico/daos/ExpenseDaoPostgres.java
+ dev.carrico.daos.ExpenseDaoPostgres
 dev/carrico/controllers/ExpenseController.java
  dev.carrico.controllers.ExpenseController

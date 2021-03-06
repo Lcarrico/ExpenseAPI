@@ -12,10 +12,12 @@ import com.google.gson.Gson;
 import dev.carrico.utils.JwtUtil;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
+import org.apache.log4j.Logger;
 
 public class LoginController {
 
-    // TODO add logger
+    private static Logger logger = Logger.getLogger(LoginController.class.getName());
+
 
     private EmployeeService employeeService = new EmployeeServiceImpl(new EmployeeDaoPostgres());
     private ManagerService managerService = new ManagerServiceImpl(new ManagerDaoPostgres());
@@ -32,14 +34,17 @@ public class LoginController {
         if (manager != null){
             String token = JwtUtil.generate("manager", manager.getUsername());
             ctx.cookie("Authorization", token, 86400);
+            logger.info("Manager " + manager.getUsername() + " successfully logged in.");
             ctx.status(200);
         }
         else if (employee != null){
             String token = JwtUtil.generate("employee", employee.getUsername());
             ctx.cookie("Authorization", token, 86400);
+            logger.info("Employee " + employee.getUsername() + " successfully logged in.");
             ctx.status(200);
         }
         else {
+            logger.error("Unsuccessful login attempt for " + manager.getUsername());
             ctx.status(404);
         }
     };

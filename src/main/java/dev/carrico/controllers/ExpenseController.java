@@ -13,12 +13,13 @@ import dev.carrico.services.ExpenseServiceImpl;
 import dev.carrico.utils.JwtUtil;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
+import org.apache.log4j.Logger;
 
 import java.util.Set;
 
 public class ExpenseController {
 
-    // TODO add logger
+    private static Logger logger = Logger.getLogger(ExpenseController.class.getName());
 
     private ExpenseService expenseService = new ExpenseServiceImpl(new ExpenseDaoPostgres());
 
@@ -41,10 +42,13 @@ public class ExpenseController {
             String resultExpenseJSON = gson.toJson(resultExpense);
             ctx.result(resultExpenseJSON);
             ctx.status(201);
+            logger.info("Employee " + expense.getEmployeeId() + " has submitted a new Expense Request.");
         } catch (BadFormatException e){
             ctx.status(400);
+            logger.error(e);
         } catch (InsufficientPrivilegesException e){
             ctx.status(403);
+            logger.error(e);
         }
     };
 
@@ -66,8 +70,10 @@ public class ExpenseController {
             ctx.status(200);
         } catch (ExpenseNotFoundException e){
             ctx.status(404);
+            logger.error(e);
         } catch (NumberFormatException e){
             ctx.status(400);
+            logger.error(e);
         }
     };
 
@@ -82,7 +88,6 @@ public class ExpenseController {
             if (!role.equals("manager")){
                 throw new InsufficientPrivilegesException();
             }
-
             int expenseId = Integer.parseInt(ctx.pathParam("expenseId"));
             String body = ctx.body();
             Gson gson = new Gson();
@@ -94,9 +99,11 @@ public class ExpenseController {
             if (!originalStatus.equals(newStatus)) {
                 if (newStatus.equals("approved")) {
                     expense = expenseService.approveExpense(expenseId, expense.getManagerId(), expense.getManagerReason());
+                    logger.info("Expense " + expense.getExpenseId() + " has been approved.");
                 }
                 if (newStatus.equals("denied")) {
                     expense = expenseService.denyExpense(expenseId, expense.getManagerId(), expense.getManagerReason());
+                    logger.info("Expense " + expense.getExpenseId() + " has been denied.");
                 }
                 ctx.result(gson.toJson(expense));
             }
@@ -106,12 +113,16 @@ public class ExpenseController {
 
         } catch (ExpenseNotFoundException e){
             ctx.status(404);
+            logger.error(e);
         } catch (NumberFormatException e){
             ctx.status(400);
+            logger.error(e);
         } catch (BadFormatException e){
             ctx.status(400);
+            logger.error(e);
         } catch (InsufficientPrivilegesException e){
             ctx.status(403);
+            logger.error(e);
         }
     };
     
@@ -128,18 +139,20 @@ public class ExpenseController {
             }
 
             int expenseId = Integer.parseInt(ctx.pathParam("expenseId"));
-            if (expenseService.deleteExpense(expenseId))
+            if (expenseService.deleteExpense(expenseId)) {
                 ctx.status(204);
-            else
+                logger.info("Expense " + expenseId + " has been deleted.");
+            }
+            else {
                 ctx.status(400);
+                logger.error("Expense " + expenseId + " was unable to be deleted.");
+            }
         } catch (ExpenseNotFoundException e){
             ctx.status(404);
+            logger.error(e);
         } catch (InsufficientPrivilegesException e){
             ctx.status(403);
+            logger.error(e);
         }
-
     };
-
-
-
 }

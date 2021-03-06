@@ -27,7 +27,6 @@ public class ExpenseDaoPostgres implements ExpenseDAO{
             ResultSet rs = ps.getGeneratedKeys(); // return the value of the generated keys
             rs.next();
             int key = rs.getInt("expense_id");
-            System.out.println(key);
             expense.setExpenseId(key);
 
             return expense;
