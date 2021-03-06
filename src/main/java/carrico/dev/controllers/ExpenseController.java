@@ -96,7 +96,6 @@ public class ExpenseController {
                 ctx.status(400);
         } catch (ExpenseNotFoundException e){
             ctx.status(404);
-            ctx.status(404);
         }
 
     };
