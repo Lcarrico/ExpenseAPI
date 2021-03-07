@@ -27,8 +27,16 @@ public class LoginController {
         String body = ctx.body();
         Gson gson = new Gson();
         Manager manager = gson.fromJson(body, Manager.class);
+        if (manager == null){
+            ctx.status(400);
+            return;
+        }
         manager = managerService.getManagerByUsernameAndPswrd(manager.getUsername(), manager.getPswrd());
         Employee employee = gson.fromJson(body, Employee.class);
+        if (employee == null){
+            ctx.status(400);
+            return;
+        }
         employee = employeeService.getEmployeeByUsernameAndPswrd(employee.getUsername(), employee.getPswrd());
 
         if (manager != null){
