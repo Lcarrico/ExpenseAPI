@@ -23,7 +23,8 @@ public class App {
         app.delete("/expenses/:expenseId", ec.deleteExpenseHandler);
 
         // Handle login
-        app.get("/login", lc.loginHandler);
+        // TODO change to POST
+        app.post("/login", lc.loginHandler);
 
         app.start();
     }
