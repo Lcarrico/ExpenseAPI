@@ -52,7 +52,10 @@ public class LoginController {
             ctx.status(200);
         }
         else {
-            logger.error("Unsuccessful login attempt for " + manager.getUsername());
+            if (manager != null){
+                logger.error("Unsuccessful login attempt for " + manager.getUsername());
+            }
+            logger.error("Unsuccessful login attempt.");
             ctx.status(404);
         }
     };

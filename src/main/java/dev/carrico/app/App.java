@@ -7,7 +7,11 @@ import io.javalin.Javalin;
 public class App {
 
     public static void main(String[] args) {
-        Javalin app = Javalin.create();
+        Javalin app = Javalin.create(
+                config -> {
+                    config.enableCorsForAllOrigins();
+                }
+        );
 
         LoginController lc = new LoginController();
         ExpenseController ec = new ExpenseController();
