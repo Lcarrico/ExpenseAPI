@@ -40,14 +40,16 @@ public class LoginController {
         employee = employeeService.getEmployeeByUsernameAndPswrd(employee.getUsername(), employee.getPswrd());
 
         if (manager != null){
-            String token = JwtUtil.generate("manager", manager.getUsername());
+            String token = JwtUtil.generate("manager", manager.getUsername(), manager.getManagerId());
             ctx.cookie("Authorization", token, 86400);
+            ctx.result(gson.toJson(token));
             logger.info("Manager " + manager.getUsername() + " successfully logged in.");
             ctx.status(200);
         }
         else if (employee != null){
-            String token = JwtUtil.generate("employee", employee.getUsername());
+            String token = JwtUtil.generate("employee", employee.getUsername(), employee.getEmployeeId());
             ctx.cookie("Authorization", token, 86400);
+            ctx.result(gson.toJson(token));
             logger.info("Employee " + employee.getUsername() + " successfully logged in.");
             ctx.status(200);
         }

@@ -15,10 +15,11 @@ public class JwtUtil {
     }
 
     // put in the parameters you want to be in the body of your jwt
-    public static String generate(String role, String username){
+    public static String generate(String role, String username, int id){
         String token = JWT.create()
                 .withClaim("role", role)
                 .withClaim("empName",username)
+                .withClaim("id", id)
                 .sign(getAlgorithm()); // this will generate a signature based off of those claims
         return token;
     }
