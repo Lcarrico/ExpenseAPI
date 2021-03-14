@@ -8,9 +8,9 @@ dev/carrico/daotests/EmployeeDaoTests.java
  dev.carrico.daotests.EmployeeDaoTests
 dev/carrico/servicetests/EmployeeServiceTests.java
  dev.carrico.servicetests.EmployeeServiceTests
-dev/carrico/utiltests/ConnectionUtilTest.java
- dev.carrico.utiltests.ConnectionUtilTest
-dev/carrico/daotests/ExpenseDaoTests.java
- dev.carrico.daotests.ExpenseDaoTests
 dev/carrico/utiltests/JwtTests.java
  dev.carrico.utiltests.JwtTests
+dev/carrico/daotests/ExpenseDaoTests.java
+ dev.carrico.daotests.ExpenseDaoTests
+dev/carrico/utiltests/ConnectionUtilTest.java
+ dev.carrico.utiltests.ConnectionUtilTest

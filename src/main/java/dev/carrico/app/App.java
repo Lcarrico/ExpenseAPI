@@ -27,7 +27,6 @@ public class App {
         app.delete("/expenses/:expenseId", ec.deleteExpenseHandler);
 
         // Handle login
-        // TODO change to POST
         app.post("/login", lc.loginHandler);
 
         app.start();

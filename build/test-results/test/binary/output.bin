@@ -1,2 +1,1 @@
-	manager
-†eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoibWFuYWdlciIsImVtcE5hbWUiOiJqZXNzaWUxIn0.uD-ZX-wndLv8akvpL0u6hjV0vm5g3tG75cJ1iHHiN9A
+ Expense{expenseId=30, amount=100, employeeReason='refund', status='pending', dateSubmitted=0, dateReviewed=0, managerReason='null', employeeId=1, managerId=0}
