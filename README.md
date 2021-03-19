@@ -1,6 +1,16 @@
 ﻿# Expense API
  
+ ## Project Description
+ 
  This will be the backend to a RESTful API Service that will allow one to handle expense refund requests for a company or corporation.
+ 
+ ## Technologies Used
+ - Java
+ - PostgreSQL
+ - Javalin
+ - Mockito
+ - JUnit
+ - Restful API
  
  ## Installation
  
