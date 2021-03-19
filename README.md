@@ -40,3 +40,5 @@
  
  `
  
+## License
+This project uses the following license: [Apache License 2](https://www.apache.org/licenses/LICENSE-2.0).
